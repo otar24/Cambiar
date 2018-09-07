@@ -1,0 +1,64 @@
+.section-strategies {
+	padding: {
+		top: rem-calc(64);
+		bottom: rem-calc(33);
+	};
+	@include media('>=tablet-l') {
+		padding-top: rem-calc(96);
+	}
+	.tab-holder {
+		padding: rem-calc(31 0);
+		@include media('>=tablet') {
+			padding-top: rem-calc(50);
+		}
+		@include media('>=desktop') {
+			padding-top: rem-calc(75);
+		}
+		@include media('>=widescreen') {
+			padding-top: rem-calc(131);
+		}
+	}
+	.text-title-wrap {
+		margin-bottom: rem-calc(30);
+		@include media('>=tablet') {
+			margin-bottom: rem-calc(45);
+		}
+		@include media('>=widescreen') {
+			margin-bottom: rem-calc(60);
+		}
+	}
+	.section-header {
+		margin-bottom: rem-calc(23);
+	}
+	.text-holder {
+		line-height: 1.333;
+		@include media('>=tablet') {
+			font-size: rem-calc(24);
+		}
+	}
+	.table-wrap {
+		margin-bottom: rem-calc(30);
+		@include media('>=tablet') {
+			margin-bottom: rem-calc(50);
+		}
+		@include media('>=desktop') {
+			margin-bottom: rem-calc(75);
+		}
+		@include media('>=widescreen') {
+			margin-bottom: rem-calc(106);
+		}
+	}
+	.text-box {
+		line-height: 1.33333;
+		p {
+			margin-bottom: rem-calc(17);
+		}
+	}
+	.collapse-holder {
+		&:not(.collapsed) {
+			.collapse {
+				max-height: rem-calc(150) !important;
+			}
+		}
+	}
+}

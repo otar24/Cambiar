@@ -1,0 +1,37 @@
+.search-results {
+  .search-container {
+    padding: {
+      top: rem-calc(94);
+    }
+  }
+  .section-header {
+    margin-bottom: rem-calc(48);
+  }
+  .hentry {
+    margin-bottom: rem-calc(35);
+    display: block;
+    .entry-meta {
+      font-size: rem-calc(12);
+    }
+    p {
+      word-wrap: break-word;
+    }
+  }
+  .navigation {
+    text-align: center;
+  }
+  @include media('>=tablet') {
+    .search-container {
+      padding: {
+        top: rem-calc(130);
+      }
+    }
+  }
+  @include media('>=desktop') {
+    .search-container {
+      padding: {
+        bottom: rem-calc(165);
+      }
+    }
+  }
+}

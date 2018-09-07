@@ -1,0 +1,109 @@
+.collapse-box {
+	font-size: rem-calc(12);
+	.title {
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: rem-calc(10);
+	}
+	.text-box {
+		line-height: 1.333333;
+	}
+}
+
+.collapse-holder {
+	&:not(.mod):not(.collapsed) {
+		.collapse {
+			.section-gains & {
+				max-height: rem-calc(140) !important;
+				@include media('>=tablet') {
+					max-height: rem-calc(220) !important;
+				}
+				@media print {
+					max-height:  100% !important;
+				}
+			}
+			max-height: rem-calc(50) !important;
+			@include media('>=tablet') {
+				max-height: rem-calc(64) !important;
+				.single-strategy .section-fund & {
+					max-height: rem-calc(216) !important;
+				}
+			}
+		}
+		&.collapse-holder-table-5 {
+			.collapse {
+				.section-gains & {
+					max-height: rem-calc(263) !important;
+					@media print {
+						max-height:  100% !important;
+					}
+				}
+			}
+		}
+	}
+	&.mod {
+		&:not(.collapsed) {
+			.collapse {
+				@include media('<tablet') {
+					max-height: 0 !important;
+				}
+				@media print {
+					max-height:  100% !important;
+				}
+			}
+		}
+		.collapse {
+			border-bottom: none;
+		}
+	}
+	&.full {
+		.collapse-btn {
+			display: none;
+		}
+		&:not(.collapsed) {
+			.collapse {
+				border: none;
+				max-height: 100% !important;
+				@include media('>=tablet') {
+					max-height: 100% !important;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 640px) {
+	#mutual_funds, #managed_accounts {
+		.collapse-holder {
+			&:not(.collapsed) {
+				.collapse {
+					max-height: rem-calc(262) !important;
+				}
+			}
+		}
+	}
+	#tab-managed_accounts {
+		.collapse-holder {
+			&:not(.collapsed) {
+				.collapse {
+					max-height: rem-calc(188) !important;
+				}
+			}
+		}
+	}
+	#tab-mutual_funds {
+		.collapse-holder {
+			&:not(.collapsed) {
+				.collapse {
+					max-height: rem-calc(248) !important;
+				}
+			}
+		}
+	}
+}
+
+.collapse {
+	height: auto;
+	overflow: hidden;
+	transition: max-height $animation-speed linear;
+	border-bottom: 1px solid rgba($light-steel-blue, .5);
+}

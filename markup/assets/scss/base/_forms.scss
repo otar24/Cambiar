@@ -1,0 +1,236 @@
+// forms
+form, fieldset {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+
+.search-form {
+	display: flex;
+	position: relative;
+	input[type='search'] {
+		width: 100%;
+		color: $white;
+		border-color: $white;
+		padding-right: rem-calc(28);
+		@include placeholder {
+			color: $white;
+		}
+		&:focus {
+			border-color: $dark-orange;
+		}
+	}
+	.btn-search {
+		top: 0;
+		right: 0;
+		border: none;
+		color: $white;
+		position: absolute;
+		font-size: rem-calc(14);
+		background: transparent;
+		transition: color $animation-speed ease-in-out;
+		&:hover {
+			color: $dark-orange;
+		}
+	}
+}
+
+.sort-form {
+	.fake-select-holder {
+		@include media('<tablet-l') {
+			border: 2px solid rgba($black, .5);
+		}
+		&:after {
+			@include media('<tablet-l') {
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+		}
+		.fake-select {
+			@include media('<tablet-l') {
+				padding: rem-calc(6 30 6 10);
+			}
+		}
+	}
+	.selectize-input {
+		@include media('>=tablet-l') {
+			text-align: left;
+			line-height: 1.15;
+			padding: rem-calc(6 30 6 10);
+			border: 2px solid rgba($black, .5);
+		}
+		&:after {
+			@include media('>=tablet-l') {
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+		}
+	}
+	.selectize-dropdown-content {
+		@include media('>=tablet-l') {
+			text-align: left;
+		}
+	}
+	.selectize-dropdown [data-selectable] {
+		@include media('>=tablet-l') {
+			padding: rem-calc(6 30 6 10);
+		}
+	}
+}
+
+.form-row {
+	@include media('>=tablet') {
+		display: flex;
+		margin: 0 -32px;
+		flex-wrap: wrap;
+	}
+	.form-group {
+		display: flex;
+		margin-bottom: rem-calc(15);
+		@include media('>=tablet') {
+			width: calc(50% - 64px);
+			margin: rem-calc(0 32 25);
+		}
+		@include media('>=desktop') {
+			width: calc(25% - 64px);
+			margin-bottom: rem-calc(37);
+		}
+		&.grow {
+			flex-grow: 1;
+		}
+		> * {
+			width: 100%;
+			flex-shrink: 0;
+		}
+	}
+	.btn-holder {
+		width: 100%;
+		margin: 0 auto;
+		max-width: rem-calc(256);
+	}
+	button,
+	input[type='button'],
+	input[type='submit'] {
+		width: 100%;
+	}
+}
+
+.select-form {
+	.selectize-input {
+		@include media('>=tablet-l') {
+			display: flex;
+			flex-wrap: nowrap;
+		}
+		.item {
+			@include media('>=tablet-l') {
+				max-width: 100%;
+				overflow: hidden;
+				white-space: nowrap;
+				display: inline-flex;
+			}
+		}
+		input[type='text'] {
+			@include media('>=tablet-l') {
+				display: none !important;
+			}
+		}
+	}
+}
+
+.datepicker-range {
+	display: flex;
+	@include media('<tablet') {
+		flex-direction: column;
+	}
+}
+
+.datepicker-holder {
+	padding: {
+		left: 9px;
+		right: 10px;
+	};
+	display: flex;
+	position: relative;
+	align-items: center;
+	border-bottom: 2px solid rgba($form-element-border-color, .5);
+	@include media('>=tablet-l') {
+		width: rem-calc(256);
+	}
+	&:before {
+		content: attr(data-text);
+	}
+	&:not(:last-child) {
+		margin: rem-calc(0 0 21);
+		@include media('>=tablet') {
+			margin: rem-calc(0 64 0 0);
+		}
+	}
+	input[type='text'] {
+		padding: {
+			left: rem-calc(4);
+			right: rem-calc(4);
+		};
+		border: none;
+	}
+	[class^="icon"] {
+		line-height: 1.3;
+		align-self: flex-start;
+		font-size: rem-calc(14);
+	}
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+//input[type='url'],
+// input[type='date'],
+textarea {
+	width: 100%;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	background: transparent;
+	padding: $form-element-padding;
+	transition: border-color $animation-speed linear;
+	border-bottom: 2px solid rgba($form-element-border-color, .5);
+
+	// &:hover {
+
+	// }
+
+	&:focus {
+		border-color: $form-element-focus-border-color;
+	}
+
+	@include placeholder {
+		color: $placeholder-color;
+		text-transform: capitalize;
+	}
+}
+
+select {
+	-webkit-border-radius: 0;
+}
+
+textarea {
+	resize: none;
+	vertical-align: top;
+	&[rows="1"] {
+		overflow: hidden;
+	}
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='submit'] {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border: none;
+	cursor: pointer;
+}

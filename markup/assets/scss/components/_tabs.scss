@@ -1,0 +1,161 @@
+.tabset-holder {
+	display: flex;
+	background: $light-steel-blue;
+	@include media('<tablet-l') {
+		margin: {
+			left: -$container-gutter-width;
+			right: -$container-gutter-width;
+		};
+		overflow: hidden;
+		overflow-x: auto;
+	}
+}
+
+.tabset {
+	display: flex;
+	min-width: 100%;
+	line-height: 1;
+	list-style: none;
+	margin-bottom: 0;
+	font-weight: 600;
+	padding: rem-calc(24 0);
+	@include media('<tablet-l') {
+		padding: {
+			left: $container-gutter-width;
+			right: $container-gutter-width;
+		};
+		flex-shrink: 0;
+	}
+	@include media('>=tablet') {
+		justify-content: center;
+	}
+	li {
+		margin: rem-calc(0 21);
+	}
+	a {
+		color: $black;
+		&.active, &:hover {
+			color: $white;
+		}
+	}
+}
+
+.tab-content {
+	overflow: hidden;
+	position: relative;
+	> * {
+		opacity: 1;
+		width: 100%;
+		overflow: hidden;
+		transition: opacity $animation-speed ease-in-out;
+		&:not(.active) .tab-holder {
+			transform: translate(0, 70px);
+		}
+		&.js-tab-hidden {
+			opacity: 0;
+		}
+	}
+}
+
+.tab-holder {
+	position: relative;
+	transition: transform $animation-speed ease-in-out;
+	.active & {
+		transform: translate(0, 0);
+	}
+	.scroll-holder {
+		margin-bottom: rem-calc(35);
+		@include media('>=tablet-l') {
+			margin-bottom: rem-calc(63);
+		}
+	}
+	.btn-box {
+		&:not(:last-child) {
+			margin-bottom: rem-calc(25);
+			@include media('>=desktop') {
+				margin-bottom: rem-calc(65);
+			}
+		}
+		.btn {
+			width: 100%;
+			margin: 0 auto;
+			max-width: rem-calc(256);
+		}
+	}
+	.text-wrap {
+		line-height: 1.5;
+		@include media('>=desktop') {
+			padding-top: rem-calc(65);
+			margin-bottom: rem-calc(37);
+		}
+	}
+}
+
+.js-tab-hidden {
+	top: -9999px !important;
+	left: -9999px !important;
+	display: block !important;
+	position: absolute !important;
+}
+
+.tabset-table {
+	@extend %listreset;
+	display: flex;
+	font-size: rem-calc(12);
+	&:not(.mod) {
+		z-index: 2;
+		top: rem-calc(16);
+		right: rem-calc(16);
+		position: absolute;
+	}
+	a {
+		color: $black;
+		align-items: center;
+		display: inline-flex;
+		padding: rem-calc(9 5);
+		min-width: rem-calc(80);
+		justify-content: center;
+		background: $light-steel-blue;
+		&:hover {
+			color: $white;
+		}
+		&.active {
+			color: $white;
+			background: $dark-slate-blue;
+			&:hover {
+				color: $black;
+			}
+		}
+		&[href="#table-perfomance-monthly"] {
+			@include media('<tablet') {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		&[href="#table-perfomance-quarterly"] {
+			@include media('<tablet') {
+				color: $white;
+				pointer-events: none;
+				background: $dark-slate-blue;
+			}
+		}
+	}
+}
+
+#table-perfomance {
+	&-monthly {
+		@include media('<tablet') {
+			opacity: 0;
+			top: -9999px !important;
+			left: -9999px !important;
+			display: block !important;
+			position: absolute !important;
+		}
+	}
+	&-quarterly {
+		@include media('<tablet') {
+			opacity: 1;
+			position: static !important;
+		}
+	}
+}

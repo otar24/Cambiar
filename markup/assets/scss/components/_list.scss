@@ -1,0 +1,148 @@
+.lists-wrap {
+	.lists-box {
+		display: flex;
+		@include media('<desktop') {
+			flex-direction: column;
+		}
+		@include media('>=desktop') {
+			flex-wrap: wrap;
+		}
+	}
+	.title {
+		@include media('>=tablet') {
+			margin-bottom: rem-calc(10);
+		}
+	}
+}
+
+.list-info {
+	@extend %listreset;
+	display: flex;
+	@include media('<phone') {
+		flex-direction: column;
+	}
+	@include media('>=phone') {
+		margin: {
+			left: -1%;
+			right: -1%;
+		};
+		flex-wrap: wrap;
+	}
+	@include media('>=tablet-l') {
+		margin: {
+			left: -2%;
+			right: -2%;
+		};
+	}
+	li {
+		margin-bottom: rem-calc(18);
+		@include media('>=phone') {
+			margin: {
+				left: 1%;
+				right: 1%;
+			};
+			width: 48%;
+		}
+		@include media('>=tablet-l') {
+			margin: {
+				left: 2%;
+				right: 2%;
+			};
+			width: 21%;
+		}
+
+	}
+	.title {
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+	.subtitle {
+		font: {
+			weight: 600;
+			size: rem-calc(32);
+		};
+		line-height: 1;
+		.small {
+			font-size: rem-calc(16);
+		}
+		[class^="icon"] {
+			font-size: rem-calc(22);
+		}
+	}
+	.text-holder {
+		font: {
+			weight: 500;
+			size: rem-calc(12);
+		};
+		opacity: .5;
+		line-height: .9;
+	}
+}
+
+.facts-list {
+	line-height: 1.1;
+	> div {
+		display: flex;
+		padding: rem-calc(7 5 7);
+		justify-content: space-between;
+		@media print {
+			border: none;
+		}
+	}
+	dt {
+		font-weight: normal;
+	}
+	dd {
+		margin-left: 0;
+	}
+	& + .list-info {
+		margin: {
+			left: 0;
+			right: 0;
+		};
+		padding-top: rem-calc(14);
+		.text-holder {
+			line-height: 1.1;
+		}
+	}
+}
+
+.manegers-list {
+	li {
+		display: flex;
+		padding: rem-calc(7 12);
+		@media print {
+			page-break-inside: avoid;
+		}
+	}
+	.img-holder {
+		flex-shrink: 0;
+		margin-right: 15px;
+		width: rem-calc(64);
+		height: rem-calc(64);
+	}
+	.list-title {
+		line-height: 1;
+		margin-bottom: rem-calc(18);
+	}
+	.text {
+		line-height: 1.333;
+		font-size: rem-calc(12);
+	}
+}
+
+.literature-list {
+	li {
+		padding: rem-calc(8 4 3 8);
+	  @media print {
+		border: none;
+	  }
+	}
+	.load-link {
+		display: flex;
+		justify-content: space-between;
+	}
+	[class^="icon-"] {
+		font-size: rem-calc(14);
+	}
+}

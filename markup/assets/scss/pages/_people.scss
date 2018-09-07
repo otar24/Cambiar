@@ -1,0 +1,138 @@
+.single-people-section {
+	background: url("../images/people-single-bg.jpg") no-repeat 50% 50%;
+	background-size: cover;
+	padding: 120px 0 100px;
+	position: relative;
+	@include media('<tablet') {
+		padding: 96px 0 100px;
+	}
+	.section-header {
+		h2 {
+			font-size: 24px;
+			font-weight: 400;
+			margin-bottom: 34px;
+		}
+	}
+	.text-box {
+		max-width: 576px;
+	}
+	.years-info {
+		margin:{
+			top: 74px;
+			bottom: 20px;
+		}
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-content: center;
+		align-items: baseline;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 1;
+		strong {
+			display: block;
+			font-size: 64px;
+			margin-bottom: -3px;
+		}
+	}
+	.photo {
+		text-align: center;
+	}
+
+	@include media('>=tablet') {
+		.text-box {
+			width: 60%;
+			float: left;
+		}
+		.photo {
+			width: 35%;
+			float: right;
+		}
+		.years-info {
+			margin-bottom: 0;
+			font-size: 32px;
+		}
+	}
+	@include media('>=tablet-l') {
+		.text-box {
+			width: 50%;
+		}
+		.photo {
+			width: 45%;
+		}
+	}
+	@include media('>=desktop') {
+		padding: 255px 0 186px; //195+96
+	}
+}
+
+.people-list {
+	ul {
+		padding: 0;
+		margin: 0 32px;
+		@include media('>=desktop') {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+		}
+		@include media('>=desktop') {
+			padding-top: 96px;
+		}
+		li {
+			list-style: none;
+			background: url("../images/people-list-bg.jpg") no-repeat 50% 50%;
+			background-size: cover;
+			width: 256px;
+			height: 256px;
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: flex-end;
+			align-content: center;
+			align-items: flex-end;
+			margin: 32px auto;
+			@include media('>=desktop') {
+				margin: 32px;
+			}
+			.text {
+				position: absolute;
+				bottom: 14px;
+				left: 16px;
+				right: 16px;
+				color: #ffffff;
+			}
+			.title {
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+			.title, .subtitle {
+				text-shadow: 3px 3px 5px rgba($black, .95);
+			}
+			.subtitle {
+				font-size: 12px;
+				margin-bottom: 15px;
+			}
+			a {
+				font-size: 12px;
+				font-weight: 600;
+				text-transform: uppercase;
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+.section-peoples {
+	padding-bottom: 64px;
+	.tabset-holder {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.scroll-wrap {
+		@include media('<desktop') {
+			min-width: 100%;
+		}
+	}
+}

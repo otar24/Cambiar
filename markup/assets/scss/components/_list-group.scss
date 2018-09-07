@@ -1,0 +1,10 @@
+.list-group {
+	@extend %listreset;
+	border-top: 2px solid $light-steel-blue;
+	@include media('<tablet') {
+		margin-bottom: rem-calc(16);
+	}
+	> * {
+		border-bottom: 2px solid $light-steel-blue;
+	}
+}

@@ -1,0 +1,248 @@
+.section-hero {
+	.container {
+		padding: {
+			top: rem-calc(37);
+			bottom: rem-calc(30);
+		};
+		@include media('>=desktop') {
+			padding: {
+				top: rem-calc(55);
+				bottom: rem-calc(55);
+			};
+		}
+		@include media('>=widescreen') {
+			padding: {
+				top: rem-calc(75);
+				bottom: rem-calc(75);
+			};
+		}
+		&.mod {
+			.section-header {
+				@include media('>=desktop') {
+					margin-bottom: rem-calc(26);
+				}
+			}
+		}
+	}
+	.section-header {
+		margin-bottom: rem-calc(30);
+		&:not(.mod) {
+			@include media('>=desktop') {
+				margin-bottom: rem-calc(88);
+			}
+		}
+		.title {
+			transition: {
+				delay: 1s;
+				duration: .66s;
+				property: transform, opacity;
+				timing-function: cubic-bezier(0.16, 0.68, 0.43, 0.99), ease-in-out;
+			};
+			opacity: 0;
+			transform: translateX(-100%);
+			body.loaded .active & {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+	}
+	.title {
+		line-height: 1;
+	}
+	.text-holder {
+		transition: {
+			delay: 1s;
+			duration: .66s;
+			property: transform, opacity;
+			timing-function: cubic-bezier(0.16, 0.68, 0.43, 0.99), ease-in-out;
+		};
+		opacity: 0;
+		line-height: 1.5;
+		margin-bottom: rem-calc(30);
+		transform: translateX(100%);
+		@include media('>=tablet') {
+			margin-bottom: rem-calc(45);
+		}
+		@include media('>=desktop') {
+			font-size: rem-calc(24);
+			margin-bottom: rem-calc(66);
+		}
+		body.loaded .active & {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+	.btn-holder {
+		display: flex;
+		justify-content: flex-end;
+	}
+	.btn-box {
+		.btn {
+			width: 100%;
+			margin: 0 auto;
+			max-width: rem-calc(256);
+		}
+	}
+	.video-box {
+		@include media('>=tablet') {
+			margin-bottom: rem-calc(30);
+		}
+		@include media('>=desktop') {
+			margin-bottom: rem-calc(64);
+		}
+	}
+}
+
+[class*="full-height"] {
+	display: flex;
+	min-height: 100vh;
+	align-items: flex-end;
+	&[class*="-center"] {
+		align-items: center;
+	}
+	@include media('<=desktop') {
+		min-height: 100%;
+	}
+}
+
+.latest-news {
+	.btn-box {
+		.btn {
+			width: 100%;
+			margin: 0 auto;
+			max-width: rem-calc(256);
+		}
+	}
+}
+
+.tab-section {
+	@include media('>=tablet') {
+		min-height: calc(100vh - 96px);
+	}
+	.container {
+		padding: {
+			top: rem-calc(34);
+			bottom: rem-calc(20);
+		};
+		@include media('>=desktop') {
+			padding: {
+				top: rem-calc(55);
+				bottom: rem-calc(55);
+			};
+		}
+		@include media('>=widescreen') {
+			padding: {
+				top: rem-calc(75);
+				bottom: rem-calc(75);
+			};
+		}
+	}
+	.section-header {
+		margin-bottom: rem-calc(28);
+		@include media('>=tablet') {
+			margin-bottom: rem-calc(23);
+		}
+		.title {
+			transition: {
+				delay: 1s;
+				duration: .66s;
+				property: transform, opacity;
+				timing-function: cubic-bezier(0.16, 0.68, 0.43, 0.99), ease-in-out;
+			};
+			opacity: 0;
+			font-weight: 800;
+			transform: translateX(-100%);
+			body.loaded .active & {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+	}
+	.text-holder {
+		transition: {
+			delay: 1s;
+			duration: .66s;
+			property: transform, opacity;
+			timing-function: cubic-bezier(0.16, 0.68, 0.43, 0.99), ease-in-out;
+		};
+		opacity: 0;
+		line-height: 1.5;
+		margin-bottom: rem-calc(30);
+		transform: translateX(100%);
+		@include media('>=desktop') {
+			line-height: 1.33333;
+			font-size: rem-calc(24);
+			margin-bottom: rem-calc(45);
+		}
+		@include media('>=widescreen') {
+			margin-bottom: rem-calc(60);
+		}
+		body.loaded .active & {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+}
+
+.cd-popup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s 0s, visibility 0s 0.3s;
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.3s 0s, visibility 0s 0s;
+		.cd-popup-container {
+			transform: translate(-50%,-50%);
+		}
+	}
+	.cd-popup-container {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		width: 90%;
+		max-width: 640px;
+		margin: 0 auto;
+		background: #FFF;
+		transform: translate,(-50%,-40px);
+		-webkit-backface-visibility: hidden;
+		transition-duration: 0.3s;
+		padding: 34px 33px;
+	}
+	.title {
+		font-size: 32px;
+		font-weight: 800;
+		margin-bottom: 30px;
+	}
+	.cd-popup-close {
+		position: absolute;
+		top: 35px;
+		right: 35px;
+		width: 26px;
+		height: 26px;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 12px;
+			width: 26px;
+			height: 1px;
+			background-color: #000000;
+		}
+		&::before {
+			transform: rotate(45deg);
+			left: 0;
+		}
+		&::after {
+			transform: rotate(-45deg);
+			right: 0;
+		}
+	}
+}

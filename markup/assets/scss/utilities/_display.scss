@@ -1,0 +1,14 @@
+[class*="display-"] {
+	&[class*="-xs"] {
+		&[class*="-hidden"] {
+			@include media('<tablet-l') {
+				display: none;
+			}
+		}
+		&[class*="-visible"] {
+			@include media('>=tablet-l') {
+				display: none;
+			}
+		}
+	}
+}

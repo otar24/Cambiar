@@ -1,0 +1,65 @@
+.columns {
+	@include media('>=tablet') {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-content: stretch;
+		align-items: stretch;
+		margin: 0 -32px;
+		> div {
+			padding: 0 32px;
+			flex: 1;
+		}
+	}
+}
+
+.about-content {
+	@include media('>=tablet') {
+		margin-bottom: 114px;
+	}
+	h2 {
+		margin-bottom: .91em;
+	}
+	p {
+		line-height: 1.5;
+		margin-bottom: 1.7em;
+	}
+	.box-info {
+		margin: 64px 0 0;
+		padding: 0;
+		@include media('>=tablet') {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-content: stretch;
+			align-items: stretch;
+			margin-left: -10px;
+			margin-right: -10px;
+			> li {
+				padding: 0 10px;
+				flex: 1;
+			}
+		}
+		li {
+			list-style: none;
+		}
+		span {
+			display: block;
+			font-weight: 600;
+		}
+		.title{
+			font-size: 32px;
+		}
+		.count {
+			font-size: 64px;
+		}
+	}
+}
+
+.section-hero {
+	.video-box.about-page {
+		margin-bottom: 0;
+	}
+}

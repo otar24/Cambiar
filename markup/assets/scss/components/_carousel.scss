@@ -1,0 +1,75 @@
+.slick-carousel-base {
+	@extend %listreset;
+	display: flex;
+	align-items: center;
+	.slick-list {
+		padding: 0 2px;
+		position: relative;
+		&:before, &:after {
+			top: 50%;
+			width: 2px;
+			z-index: 2;
+			content: '';
+			height: 50%;
+			position: absolute;
+			transform: translate(0, -50%);
+			background: rgba(#7f8e9a, .25);
+		}
+		&:before {
+			left: 0;
+		}
+		&:after {
+			right: 0;
+		}
+	}
+	.slick-arrow {
+		font-size: 0;
+		color: $black;
+		outline: none;
+		line-height: 0;
+		flex-shrink: 0;
+		position: relative;
+		width: rem-calc(32);
+		height: rem-calc(32);
+		background: transparent;
+		&:before {
+			top: 50%;
+			left: 50%;
+			line-height: 1;
+			font-size: 14px;
+			font-weight: bold;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			font-family: 'icomoon' !important;
+		}
+	}
+	.slick-prev {
+		&:before {
+			content: "\e902";
+		}
+	}
+	.slick-next {
+		&:before {
+			content: "\e903";
+		}
+	}
+	.slick-disabled {
+		color: rgba(#7f8e9a, .25);
+	}
+}
+
+.slick-track {
+	display: flex;
+	line-height: 1;
+	.slick-slide {
+		flex-shrink: 0;
+		margin: rem-calc(0 15);
+		@include media('>=tablet') {
+			margin: rem-calc(0 17);
+		}
+		@include media('>=widescreen') {
+			margin: 0;
+			padding: rem-calc(0 22);
+		}
+	}
+}

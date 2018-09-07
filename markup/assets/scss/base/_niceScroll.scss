@@ -1,0 +1,91 @@
+.scroll-holder {
+	display: flex;
+	position: relative;
+	&.scroll-holder-active {
+		padding-bottom: rem-calc(60);
+		@include media('>=widescreen') {
+			padding-bottom: rem-calc(88);
+		}
+	}
+	> * {
+		@include media('<tablet-l') {
+			min-width: 100%;
+		}
+	}
+	.table {
+		margin-bottom: 0;
+	}
+}
+
+.nicescroll-rails {
+	z-index: 0 !important;
+	border: none !important;
+	height: rem-calc(48) !important;
+	&:before {
+		top: 50%;
+		left: 0;
+		right: 0;
+		content: '';
+		height: 2px;
+		position: absolute;
+		transform: translate(0, -50%);
+		background-image: repeating-linear-gradient(to right, rgba($black, .5), rgba($black, .5) 2px, transparent 0, transparent 8px)
+	}
+	.nicescroll-cursors {
+		cursor: pointer;
+		background: transparent !important;
+		&:before {
+			top: 50%;
+			left: 0;
+			right: 0;
+			content: '';
+			height: 2px;
+			position: absolute;
+			background: $black;
+			transform: translate(0, -50%);
+		}
+	}
+}
+
+.nice-scroll-arrow {
+	bottom: 0;
+	z-index: 1;
+	padding: 0;
+	color: $black;
+	outline: none;
+	line-height: 1;
+	cursor: pointer;
+	overflow: hidden;
+	position: absolute;
+	background: transparent;
+	&:before {
+		line-height: inherit;
+		font-size: rem-calc(48);
+		font-family: 'icomoon' !important;
+	}
+	&.nice-scroll-inactive {
+		color: rgba($black, .25);
+	}
+	&.nice-scroll-prev {
+		left: 7px;
+		&:before {
+			content: "\e902";
+		}
+	}
+	&.nice-scroll-next {
+		right: 7px;
+		&:before {
+			content: "\e903";
+		}
+	}
+	.sr-only {
+		border: 0;
+		padding: 0;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		clip: rect(0,0,0,0);
+		white-space: nowrap;
+	}
+}

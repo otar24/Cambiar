@@ -1,0 +1,40 @@
+.breadcrumb-nav {
+	font-size: rem-calc(12);
+	padding: rem-calc(0 32);
+	margin-bottom: rem-calc(20);
+	> span {
+		color: $white;
+		line-height: 1.333;
+		vertical-align: top;
+		display: inline-block;
+		&:not(:last-of-type) {
+			margin-right: rem-calc(5);
+			a {
+				position: relative;
+				vertical-align: top;
+				display: inline-block;
+				padding-right: rem-calc(8);
+				&:after {
+					top: 50%;
+					right: 0;
+					color: inherit;
+					line-height: 1;
+					content: "\e911";
+					position: absolute;
+					font-size: rem-calc(6);
+					transform: translate(0, -50%);
+					font-family: 'icomoon' !important;
+				}
+				&:not(:hover) {
+					color: rgba($white, .5);
+				}
+			}
+		}
+		&:last-child {
+			pointer-events: none;
+		}
+	}
+	a {
+		color: inherit;
+	}
+}

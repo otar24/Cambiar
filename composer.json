@@ -1,0 +1,33 @@
+{
+    "name"        : "UTHEME/cambiar-investors",
+    "description" : "Project for WordPress stack via Composer",
+    "type"        : "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url" : "https://wpackagist.org"
+        }
+    ],
+    "config"      : {
+        "vendor-dir": "wp-content/vendor"
+    },
+    "require"     : {
+        "johnpbloch/wordpress"                        : ">=4.9",
+        "rarst/fragment-cache"                        : "^1.3",
+        "rarst/update-blocker"                        : "^1.1"
+    },
+    "require-dev" : {
+        "rarst/laps"                                  : "^1.4.4",
+        "rarst/toolbar-theme-switcher"                : "^1.5",
+        "wpackagist-plugin/a-fresher-cache"           : "*",
+        "wpackagist-plugin/core-control"              : "*",
+        "wpackagist-plugin/monster-widget"            : "*",
+        "wpackagist-plugin/theme-check"               : "*",
+        "wpackagist-plugin/user-switching"            : "*",
+        "wpackagist-plugin/contact-form-7"            : "*"
+
+    },
+    "extra"       : {
+        "wordpress-install-dir": "wp"
+    }
+}

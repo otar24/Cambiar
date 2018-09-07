@@ -1,0 +1,52 @@
+#footer {
+	color: $white;
+	font-size: rem-calc(12);
+	padding: rem-calc(67 0 64);
+	background: $dark-slate-blue;
+	position: relative;
+	.text-box {
+		line-height: 1.33333;
+		p {
+			margin-bottom: rem-calc(18);
+		}
+	}
+}
+
+.footer-top {
+	margin: rem-calc(0 -10 18);
+	a {
+		position: relative;
+		vertical-align: top;
+		display: inline-block;
+		padding: rem-calc(0 10);
+		margin-bottom: rem-calc(4);
+		&.copyright {
+			&:not(:hover) {
+				color: $white;
+			}
+		}
+		&:not(:last-child) {
+			&:before {
+				right: 0;
+				top: 50%;
+				width: 1px;
+				content: "";
+				height: 11px;
+				position: absolute;
+				background: $white;
+				transform: translate(0, -50%);
+			}
+		}
+	}
+}
+
+.add-nav {
+	@extend %listreset;
+	display: flex;
+	margin-left: rem-calc(10);
+	li {
+		float: left;
+		position: relative;
+		padding: rem-calc(0 10);
+	}
+}

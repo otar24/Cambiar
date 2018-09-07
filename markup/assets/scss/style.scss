@@ -1,0 +1,114 @@
+/*
+Theme Name: Cambiar Investors
+Author: Anonymous
+Author URI:
+Version: 1
+Description: Cambiar Investors theme for Wordpress
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Cambiar Investors
+Tags: one-column, two-columns
+Theme URI:
+*/
+
+$breakpoints: (
+	'xs-phone': 320px,
+	'phone': 480px,
+	'tablet': 640px,
+	'tablet-l': 768px,
+	'desktop': 1024px,
+	'widescreen': 1280px
+);
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+// =======================================
+// Vendors
+// =======================================
+
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+@import 'vendors/fonts';
+@import "vendors/icomoon";
+@import "vendors/jquery.fullpage";
+@import "vendors/jquery-ui";
+@import "vendors/slick";
+@import "vendors/fancybox";
+
+// =======================================
+// Base
+// =======================================
+
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+@import 'base/cms-reset';
+@import 'base/wp-reset';
+@import "base/niceScroll";
+@import 'base/custom-form';
+@import 'base/forms';
+@import 'base/typography';
+@import 'base/tables';
+
+// =======================================
+// Components
+// =======================================
+
+@import 'components/breadcrumb';
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/dropdowns';
+@import 'components/list';
+@import 'components/list-group';
+@import 'components/post';
+@import 'components/tabs';
+@import 'components/widget';
+@import 'components/diagrami';
+
+// =======================================
+// Utilities
+// =======================================
+
+@import 'utilities/background';
+@import 'utilities/collapse';
+@import 'utilities/display';
+@import 'utilities/text';
+
+// =======================================
+// Layout
+// =======================================
+
+@import "layout/common";
+@import "layout/header";
+@import "layout/footer";
+
+// =======================================
+// Pages
+// =======================================
+
+@import "pages/home";
+@import "pages/strategies";
+@import "pages/fund";
+@import "pages/about";
+@import "pages/people";
+@import "pages/process";
+@import "pages/culture";
+@import "pages/history";
+@import "pages/single";
+@import "pages/infocus";
+@import "pages/international";
+@import "pages/contact";
+@import "pages/search";

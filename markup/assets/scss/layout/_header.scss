@@ -1,0 +1,223 @@
+#header {
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	position: fixed;
+	padding: rem-calc(16 0);
+	background: $dark-slate-blue;
+	transition: transform $animation-speed ease-in-out;
+	@include media('>=tablet-l'){
+		padding: rem-calc(24 0);
+	}
+	& + #main, & + .main {
+		.fp-container {
+			padding-top: rem-calc(64);
+			@include media('>=tablet-l') {
+				padding-top: rem-calc(96);
+			}
+		}
+	}
+	& + .sticky-panel {
+		left: 0;
+		right: 0;
+		z-index: 2;
+		position: fixed;
+		top: rem-calc(64);
+		@include media('>=tablet-l') {
+			top: rem-calc(96);
+		}
+		& + #main, & + .main {
+			margin-top: rem-calc(128);
+			@include media('>=tablet') {
+				margin-top: rem-calc(193);
+			}
+			@include media('>=tablet-l') {
+				margin-top: rem-calc(223);
+			}
+			@include media('>=desktop') {
+				margin-top: rem-calc(160);
+				.single-strategy & {
+					margin-top: rem-calc(118);
+				}
+			}
+		}
+	}
+	@media print {
+		position: static;
+		background: #ffffff;
+		& + .sticky-panel {
+			display: none;
+			& + #main, & + .main {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+.header-holder {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	@media print {
+		justify-content: center;
+	}
+}
+
+.logo-header {
+	z-index: 1;
+	position: relative;
+	.logo {
+		vertical-align: top;
+		width: rem-calc(128);
+		display: inline-block;
+		@include media('>=tablet-l') {
+			width: rem-calc(192);
+		}
+	}
+	img {
+		vertical-align: top;
+		width: 300px;
+		max-height: 75px;
+	}
+	@media print {
+		img {
+			filter: invert(100%);
+		}
+	}
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	.drop {
+		width: 100%;
+		display: flex;
+		position: fixed;
+		flex-direction: column;
+		padding: rem-calc(20 0 0);
+		justify-content: space-between;
+		box-shadow: 0 0 15px rgba($black, .25);
+		@include media('>=tablet') {
+			width: 320px;
+			padding: rem-calc(35 0 0);
+		}
+		.nav-active & {
+			transform: translate(0, 0);
+		}
+		@include media('<=desktop') {
+			&.search {
+				display: block;
+				transition: all 0.5s;
+			}
+		}
+	}
+	.drop, .submenu {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: $dark-slate-blue;
+		transform: translate(100%, 0);
+		transition: transform $animation-speed ease-in-out;
+	}
+	.top-panel {
+		display: flex;
+		flex-shrink: 0;
+		padding: rem-calc(0 35);
+		justify-content: flex-end;
+		margin-bottom: rem-calc(35);
+	}
+	ul {
+		@extend %listreset;
+	}
+	@media print {
+		display: none;
+	}
+}
+
+.menu-panel-holder {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: rem-calc(47);
+	@include media('<tablet-l', 'landscape') {
+		padding-bottom: rem-calc(20);
+	}
+	.form-holder {
+		flex-shrink: 0;
+		padding: rem-calc(0 32);
+		.search-form {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.main-nav-holder {
+	flex-grow: 1;
+	overflow: hidden;
+	overflow-y: auto;
+	position: relative;
+	margin-bottom: rem-calc(36);
+	@include media('<tablet-l', 'landscape') {
+		margin-bottom: rem-calc(15);
+	}
+	// @include media('<=desktop') {
+	// 	.menu-panel-holder.search & {
+	// 		flex-grow: 0;
+	// 		transition: all 0.5s;
+	// 	}
+	// }
+}
+
+.main-nav {
+	li {
+		padding: rem-calc(3 32 3);
+		> a {
+			color: $white;
+			line-height: 1.1;
+			display: block;
+			font-size: rem-calc(24);
+			transform: translate3d(0, 0, 0);
+			&:hover {
+				color: $dark-orange;
+			}
+		}
+	}
+
+	.arrow {
+		position: relative;
+		&:hover {
+			&:after {
+				transform: translate(10px, -50%);
+			}
+		}
+		&:after {
+			top: 50%;
+			right: 4px;
+			line-height: 1;
+			color: inherit;
+			content: "\e911";
+			position: absolute;
+			font-size: rem-calc(14);
+			transform: translate(0, -50%);
+			font-family: 'icomoon' !important;
+			transition: transform $animation-speed ease-in-out;
+		}
+		&.opener-active {
+			& + .submenu {
+				transform: translate(0, 0);
+			}
+		}
+	}
+	.submenu {
+		left: 0;
+		z-index: 1;
+		position: absolute;
+	}
+}
+// .menu-main-container {
+// 	@include media('<=tablet-l', '>phone') {
+// 		min-height: 200px;
+// 	}
+// }

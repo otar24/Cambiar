@@ -1,0 +1,215 @@
+#wrapper {
+  overflow: hidden;
+  background-size: 0 0; }
+  #wrapper:before {
+    background-image: inherit;
+    background-size: cover;
+    background-position: 50% 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    content: '';
+    position: fixed; }
+
+.strtg-mth-data {
+  display: none; }
+
+.preloader {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: fixed;
+  z-index: 99999;
+  background: #fff;
+  margin: 0 auto; }
+
+.circular {
+  -webkit-animation: scale 2s linear infinite;
+          animation: scale 2s linear infinite;
+  height: auto;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  width: 150px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round; }
+
+@-webkit-keyframes scale {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1); }
+  50% {
+    transform: scale(2);
+    -webkit-transform: scale(2); }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1); }
+  50% {
+    transform: scale(2);
+    -webkit-transform: scale(2); }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px; } }
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px; } }
+
+@-webkit-keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20; }
+  40% {
+    stroke: #0057e7; }
+  66% {
+    stroke: #008744; }
+  80%,
+  90% {
+    stroke: #ffa700; } }
+
+@keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20; }
+  40% {
+    stroke: #0057e7; }
+  66% {
+    stroke: #008744; }
+  80%,
+  90% {
+    stroke: #ffa700; } }
+
+.jvectormap-container {
+  height: 100%; }
+  .jvectormap-container svg text {
+    font-family: TradeGothicLTStd, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300; }
+    @media (max-width: 767px) {
+      .jvectormap-container svg text {
+        display: none; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .jvectormap-container svg text {
+        font-size: 9px; } }
+
+.jvectormap-tip {
+  position: absolute;
+  display: none;
+  border: none;
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 1000;
+  color: #41525c;
+  box-shadow: #666 2px 6px 12px;
+  line-height: 1.5rem; }
+  .jvectormap-tip .popup-content {
+    padding: 1.25rem; }
+  .jvectormap-tip .name {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin: 0 0 0 0; }
+  .jvectormap-tip .job {
+    font-size: 0.75rem;
+    font-weight: normal;
+    margin: 0; }
+  .jvectormap-tip .email, .jvectormap-tip .phone {
+    font-size: 0.75rem;
+    margin: 0;
+    padding-left: 21px;
+    position: relative; }
+    .jvectormap-tip .email:before, .jvectormap-tip .phone:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      content: '';
+      -webkit-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+      display: block; }
+  .jvectormap-tip .email:before {
+    background-image: url("../images/icon-email.png");
+    width: 16px;
+    height: 10px; }
+  .jvectormap-tip .phone:before {
+    background-image: url("../images/icon-phone.png");
+    width: 14px;
+    height: 14px;
+    margin-top: -1px; }
+
+#interactive_map {
+  height: 576px;
+  width: 100%; }
+
+body.tabs-ajax-loading .scroll-holder::before {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  background: url("../images/cambir-logo-button.svg") no-repeat 50% 50%;
+  background-size: contain;
+  -webkit-animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+          animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite; }
+
+@-webkit-keyframes pulse-dot {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8); } }
+
+@keyframes pulse-dot {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8); } }
+/*# sourceMappingURL=frontend.css.map */
